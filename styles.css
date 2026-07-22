@@ -1,355 +1,340 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — Hapin</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<link rel="icon" href="assets/hapin_logo_white_letters.svg" type="image/svg+xml">
-</head>
-<body>
+/* Hapin — minimal site
+   Brand source: Hapin Visual Style Guidelines V02 (June 2026)
+   Dark background #111111, blue→green gradient #4A89FF → #38FCA3, Fredoka typeface */
 
-<header class="site-header">
-  <a href="index.html" class="site-header__logo" aria-label="Hapin home">
-    <img src="assets/hapin_logo_white.svg" alt="Hapin">
-  </a>
-  <button class="menu-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-</header>
+:root {
+  --bg: #111111;
+  --bg-elevated: #1a1a1a;
+  --text: #ffffff;
+  --text-muted: #a3a3a3;
+  --hairline: #2a2a2a;
+  --blue: #4a89ff;
+  --green: #38fca3;
+  --gradient: linear-gradient(90deg, var(--blue) 0%, var(--green) 100%);
+  --focus: #38fca3;
+  --max-width: 720px;
+}
 
-<nav id="nav-panel" class="nav-panel">
-  <ul class="nav-panel__list">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="privacy.html" class="is-current">Privacy Policy</a></li>
-    <li><a href="contact.html">Contact Us</a></li>
-  </ul>
-</nav>
+* {
+  box-sizing: border-box;
+}
 
-<main style="display:block; padding-top:24px;">
-  <div class="doc">
-    <p class="doc__eyebrow">Legal</p>
-    <h1>Privacy Policy</h1>
-    <p class="doc__updated">Last updated: July 3, 2026</p>
+html {
+  -webkit-font-smoothing: antialiased;
+}
 
-    <div class="accordion">
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Fredoka', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-      <details class="accordion-item" open>
-        <summary>1. Introduction <span class="plus">+</span></summary>
-        <div class="accordion-item__body">
-          <p>Hapin, Inc. operates a service to help you discover films and events, set reminders across the
-          channel you choose (calendar, digital wallet, email, or text message), find showtimes, and buy
-          tickets. This Privacy Policy explains what personal information we collect, how we use and share
-          it, and your choices and rights.</p>
-        </div>
-      </details>
+a {
+  color: var(--green);
+  text-decoration: none;
+}
 
-      <details class="accordion-item">
-        <summary>2. Information We Collect <span class="plus">+</span></summary>
-        <div class="accordion-item__body">
-          <p><strong>Personal information you provide to us.</strong> What we collect depends on which
-          reminder channels you use. This may include:</p>
-          <ul>
-            <li>Phone number (for SMS reminders)</li>
-            <li>Email address (for email reminders, or if provided through single sign-on)</li>
-            <li>Name (if provided through single sign-on)</li>
-            <li>Calendar access, if you grant permission to add, update, or remove reminder events</li>
-            <li>Wallet pass data, if you receive a reminder as an Apple Wallet or Google Wallet pass</li>
-            <li>Film, event, and showtime selections you make</li>
-          </ul>
-          <p>If you use our showtimes or ticketing features, our exhibitor or ticketing partners may collect
-          additional information directly from you, such as payment or identity verification details. Hapin
-          does not store your full payment card data; that's handled by our partners under their own privacy
-          policies.</p>
-          <p><strong>Information automatically collected.</strong> We automatically collect certain technical
-          information, which does not on its own reveal your identity, to help provide reminders and
-          suggestions:</p>
-          <ul>
-            <li>Log and usage data, such as IP address, device information, browser type, timestamps, and feature usage</li>
-            <li>Device data, such as hardware model, operating system, and mobile carrier</li>
-            <li>Approximate location, inferred from your IP address, to show relevant theaters and showtimes</li>
-          </ul>
-          <p><strong>Personal information shared for coordinating with others.</strong> Movies and events are
-          often shared experiences. If you share a film or event reminder with friends or family to coordinate
-          attending together, we may collect and use the contact information (name, phone number, or email)
-          needed to facilitate that sharing.</p>
-        </div>
-      </details>
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
 
-      <details class="accordion-item">
-        <summary>3. How We Use Your Information <span class="plus">+</span></summary>
-        <div class="accordion-item__body">
-          <p>We use your information to:</p>
-          <ul>
-            <li>Provide and operate the services, including delivering reminders across your chosen channel and directing you to showtimes or ticketing</li>
-            <li>Communicate with you, including sending reminders and responding to support inquiries</li>
-            <li>Improve and maintain the services, including troubleshooting and keeping them secure</li>
-            <li>Measure campaign performance for studio and exhibitor partners, using de-identified or aggregated data — this does not involve sharing your individual identity</li>
-            <li>Prevent fraud and abuse</li>
-            <li>Comply with the law, including recordkeeping obligations such as retaining SMS consent records</li>
-          </ul>
-          <p>We do not sell your personal information for money. We do use it to help studios and exhibitors
-          reach relevant audiences with promotions, which is legally considered "sharing" under California and
-          other state privacy laws. See "Do Not Sell or Share My Personal Information" below for details and
-          how to opt out.</p>
-        </div>
-      </details>
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
 
-      <details class="accordion-item">
-        <summary>4. Use of Google Calendar Data <span class="plus">+</span></summary>
-        <div class="accordion-item__body">
-          <p>If you use Google Calendar reminders, Hapin requests limited access via Google's Calendar API to
-          create, update, and remove reminder events on your behalf. We don't access, read, or store any other
-          calendar events, contacts, or Google Account data.</p>
-          <p>This use adheres to the Google API Services User Data Policy, including its Limited Use
-          requirements. Data from the Calendar API is:</p>
-          <ul>
-            <li>Used only to provide the reminder feature, for no other purpose</li>
-            <li>Never used for advertising, including personalized or retargeted ads</li>
-            <li>Never sold, rented, or transferred to data brokers or other third parties</li>
-            <li>Never used to train AI or machine learning models</li>
-            <li>Never read by Hapin personnel, except for security, legal compliance, or with your consent</li>
-          </ul>
-          <p>You can revoke access anytime through your device's calendar settings or your Google Account
-          permissions page. This stops future reminder events but won't delete ones already added.</p>
-        </div>
-      </details>
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px clamp(20px, 5vw, 48px);
+  position: relative;
+  z-index: 20;
+}
 
-      <details class="accordion-item">
-        <summary>5. Apple Wallet Pass Data <span class="plus">+</span></summary>
-        <div class="accordion-item__body">
-          <p>If you use an Apple Wallet reminder, Hapin generates a digital pass with film or event information
-          and issues it via Apple's PassKit framework. Each pass has an internal identifier that lets us send
-          updates, such as a release date change.</p>
-          <p>If you sign in with Apple, we receive an account identifier and either your email or an
-          Apple-generated private relay address. We don't share relay addresses with third parties, consistent
-          with Apple's requirements.</p>
-          <p>To deliver pass updates, we register your device with Apple's Push Notification service (APNs),
-          which routes notifications without accessing your pass content.</p>
-          <p>You can remove a pass anytime from Apple Wallet, which stops future updates.</p>
-        </div>
-      </details>
+.site-header__logo img {
+  height: 28px;
+  display: block;
+}
 
-      <details class="accordion-item">
-        <summary>6. Text Message (SMS) Reminders <span class="plus">+</span></summary>
-        <div class="accordion-item__body">
-          <p>If you choose SMS reminders, you'll provide your phone number. By confirming, you consent to
-          receive automated texts related to your requested reminders.</p>
-          <ul>
-            <li>Message frequency varies by how many reminders you set</li>
-            <li>Message and data rates may apply</li>
-            <li>Carriers aren't liable for delayed or undelivered messages</li>
-            <li>Reply STOP to opt out anytime, or HELP for assistance</li>
-            <li>SMS consent isn't required to use other parts of the service</li>
-          </ul>
-          <p>Our SMS provider processes your phone number and message content solely to deliver texts, per
-          their own privacy practices.</p>
-        </div>
-      </details>
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 40px;
+  align-items: flex-end;
+}
 
-      <details class="accordion-item">
-        <summary>7. Email Reminders <span class="plus">+</span></summary>
-        <div class="accordion-item__body">
-          <p>If you choose to receive a film or event reminder by email, you'll provide your email address, and
-          we'll send you messages related to the film(s), event(s), and showtime(s) you selected. You can
-          unsubscribe from reminder emails at any time using the link included in any email we send, or by
-          contacting us at info@hapin.co.</p>
-          <p>Our email service provider processes your email address and message content solely to deliver
-          these messages, per their own privacy practices.</p>
-        </div>
-      </details>
+.menu-toggle span {
+  display: block;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease, width 0.25s ease;
+}
 
-      <details class="accordion-item">
-        <summary>8. How We Share Your Information <span class="plus">+</span></summary>
-        <div class="accordion-item__body">
-          <p><strong>Service providers.</strong> We share information with vendors bound by contract to use it
-          only for the services they provide us: SMS delivery, email delivery, payment processing, data
-          hosting, and analytics.</p>
-          <p><strong>Advertising platforms.</strong> See "Do Not Sell or Share My Personal Information" below.</p>
-          <p><strong>Ticketing and exhibitor partners.</strong> See "Ticketing and Exhibitor Partners" below.</p>
-          <p><strong>Studios and exhibitors.</strong> We help studios and exhibitors reach relevant audiences
-          with promotions without disclosing your raw personal information to them. See "Do Not Sell or Share
-          My Personal Information" below for details and how to opt out.</p>
-          <p><strong>Professional advisors.</strong> We may disclose information to lawyers, auditors, and
-          accountants, under confidentiality obligations, as needed for their services to us.</p>
-          <p><strong>Legal and safety.</strong> We may disclose information where required by law or necessary
-          to protect the rights, property, or safety of Hapin, our users, or others.</p>
-          <p><strong>Business transfers.</strong> In a merger, acquisition, or sale of assets, personal
-          information may transfer as part of the deal. We'll notify you if this subjects your information to
-          a different policy.</p>
-          <p><strong>Aggregated and de-identified data.</strong> We may share information that no longer
-          reasonably identifies you; this Policy doesn't restrict that use.</p>
-        </div>
-      </details>
+.menu-toggle span:nth-child(1) { width: 24px; }
+.menu-toggle span:nth-child(2) { width: 18px; }
+.menu-toggle span:nth-child(3) { width: 24px; }
 
-      <details class="accordion-item">
-        <summary>9. Ticketing and Exhibitor Partners <span class="plus">+</span></summary>
-        <div class="accordion-item__body">
-          <p>Using our showtimes or ticketing features may direct you to a theater, ticketing platform, or
-          exhibitor partner, or the purchase may be completed through Hapin's own point-of-sale system. We
-          share only what's necessary to fulfill your purchase, deliver a promotion you've opted into, and
-          measure reminder effectiveness, such as the film or event, showtime, and referral identifiers.</p>
-          <p>When your purchase is completed by a partner, your payment details are handled by that partner or
-          their payment processor under their own privacy policy, and we encourage you to review it before
-          purchasing. When your purchase is completed through Hapin's own system, payments are processed as
-          described in "Payments" below, and we still never store your full payment card information.</p>
-          <p>This section will be updated as our ticketing and promotional partnerships expand.</p>
-        </div>
-      </details>
+.menu-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+  width: 24px;
+}
+.menu-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+  width: 24px;
+}
 
-      <details class="accordion-item">
-        <summary>10. Payments <span class="plus">+</span></summary>
-        <div class="accordion-item__body">
-          <p>For payments Hapin processes directly (e.g., future loyalty or promotional purchases), we use a
-          third-party payment processor. Your card details go directly to their secure systems, not ours. They
-          may collect additional information, like billing address, to process payment and prevent fraud, per
-          their own policy.</p>
-          <p>We receive limited transaction information back, such as confirmation of success, amount, and a
-          transaction ID, to fulfill your purchase and provide support.</p>
-        </div>
-      </details>
+.nav-panel {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease;
+}
 
-      <details class="accordion-item">
-        <summary>11. Do Not Sell or Share My Personal Information <span class="plus">+</span></summary>
-        <div class="accordion-item__body">
-          <p>Hapin doesn't sell your personal information for money. We do use it to help studios and
-          exhibitors reach relevant audiences with promotions, for example, showing a promotion to people who
-          set a reminder for a similar film or event, without disclosing your raw personal information to
-          them. Under the CCPA and similar laws, this is legally "sharing" for cross-context behavioral
-          advertising.</p>
-          <p><strong>Advertising platforms and lookalike audiences.</strong> To help reach new people who may
-          be interested in Hapin, we may provide advertising platforms with a list of identifiers derived from
-          your contact information (such as a hashed version of your email address or phone number). These
-          platforms use this to build "lookalike" audiences — groups of new people who share characteristics
-          with our existing users — for advertising purposes. This is legally considered a "sale" of personal
-          information under the CCPA and similar state laws, even though we do not receive money for it. The
-          opt-out below applies to this practice as well.</p>
-          <p>You can opt out anytime by contacting info@hapin.co and we'll honor your request.</p>
-          <p>Opting out doesn't affect your ability to receive reminders; it only affects whether your activity
-          helps studios and exhibitors reach you with additional promotions.</p>
-        </div>
-      </details>
+.nav-panel.is-open {
+  opacity: 1;
+  visibility: visible;
+}
 
-      <details class="accordion-item">
-        <summary>12. Sensitive Personal Information <span class="plus">+</span></summary>
-        <div class="accordion-item__body">
-          <p>Precise geolocation is classified as Sensitive Personal Information under the CCPA/CPRA and
-          similar laws, with additional protections.</p>
-          <p>Hapin may collect precise location to notify you when you're near a theater or venue showing a
-          saved film or event. If we do, we will:</p>
-          <ul>
-            <li>Collect it only with your device-level permission</li>
-            <li>Use it solely for that feature</li>
-            <li>Not use it for profiling or cross-context advertising</li>
-            <li>Let you disable it anytime without affecting other reminder features</li>
-          </ul>
-          <p>California residents can limit the use of Sensitive Personal Information to necessary purposes.
-          Contact info@hapin.co with questions.</p>
-        </div>
-      </details>
+.nav-panel__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
 
-      <details class="accordion-item">
-        <summary>13. Data Retention <span class="plus">+</span></summary>
-        <div class="accordion-item__body">
-          <p>We retain information as long as necessary to provide the services and meet legal obligations,
-          then delete or de-identify it:</p>
-          <ul>
-            <li>Phone numbers and email addresses are kept indefinitely as a record of your reminders and consent. Request deletion anytime at info@hapin.co, subject to the exception below.</li>
-            <li>SMS consent records (number, timestamp, consent language) are kept for our relationship's duration plus a legally required period, even after you delete your contact info, solely to demonstrate valid consent.</li>
-            <li>Internal account identifiers link your reminders and preferences across sessions and don't reveal your identity on their own; retained indefinitely.</li>
-          </ul>
-          <p>Contact info@hapin.co to delete your information; we'll delete or de-identify what we can, keeping
-          only what's legally required.</p>
-        </div>
-      </details>
+.nav-panel__list li {
+  margin: 0 0 28px;
+}
 
-      <details class="accordion-item">
-        <summary>14. Security <span class="plus">+</span></summary>
-        <div class="accordion-item__body">
-          <p>We use industry-standard safeguards to protect your personal information from unauthorized
-          access, use, or disclosure. Report security issues to info@hapin.co.</p>
-        </div>
-      </details>
+.nav-panel__list li:last-child {
+  margin-bottom: 0;
+}
 
-      <details class="accordion-item">
-        <summary>15. Your Rights <span class="plus">+</span></summary>
-        <div class="accordion-item__body">
-          <p>Under the CCPA and similar comprehensive privacy laws in states including Virginia, Colorado,
-          Connecticut, Utah, Texas, and Oregon, you have the right to:</p>
-          <ul>
-            <li>Know what categories of personal information we collect, use, and disclose, and why</li>
-            <li>Access, correct, or delete your personal information (see "Data Retention" above for deletion exceptions)</li>
-            <li>Obtain a portable copy of your personal information</li>
-            <li>Opt out of the sale or sharing of your personal information, including for targeted advertising (see "Do Not Sell or Share My Personal Information" above)</li>
-            <li>Limit the use of Sensitive Personal Information (see above)</li>
-          </ul>
-          <p>We won't discriminate against you for exercising these rights. Contact us at info@hapin.co, or by
-          mail using the address in "Contact Us" below, to exercise them. We'll verify your identity where
-          required and respond within the legal timeframe. If we deny a request, you may appeal by replying to
-          our denial; if denied again, you may contact your state's Attorney General.</p>
-          <p><strong>Cookies.</strong> Our website may use cookies to operate and improve the site. Control
-          them through your browser settings; disabling some may affect functionality.</p>
-        </div>
-      </details>
+.nav-panel__list a {
+  color: var(--text);
+  font-size: 28px;
+  font-weight: 500;
+}
 
-      <details class="accordion-item">
-        <summary>16. Children's Online Privacy Protection Act (COPPA) <span class="plus">+</span></summary>
-        <div class="accordion-item__body">
-          <p>Hapin's services aren't directed to children under 13, and we don't knowingly collect their
-          personal information. If we learn we've collected information from a child under 13 without verified
-          parental consent, we'll delete it promptly.</p>
-          <p>Contact info@hapin.co if you believe we've collected a child's information. We may suspend or
-          terminate accounts if we believe a user misrepresented their age.</p>
-        </div>
-      </details>
+.nav-panel__list a.is-current {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
-      <details class="accordion-item">
-        <summary>17. Changes to This Policy <span class="plus">+</span></summary>
-        <div class="accordion-item__body">
-          <p>We may update this policy. Changes will update the "Last Updated" date above and, where legally
-          required, come with additional notice. Continued use after a change takes effect means you accept
-          the update.</p>
-        </div>
-      </details>
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px 80px;
+}
 
-      <details class="accordion-item">
-        <summary>18. Contact Us <span class="plus">+</span></summary>
-        <div class="accordion-item__body">
-          <p>Questions about this Privacy Policy or how we handle your information:</p>
-          <p>Hapin, Inc.<br>
-          info@hapin.co<br>
-          1223 South Roxbury Drive, Suite 204<br>
-          Los Angeles, CA 90035</p>
-        </div>
-      </details>
+.hero {
+  text-align: center;
+  max-width: 560px;
+}
 
-    </div>
-  </div>
-</main>
+.hero__mark {
+  width: clamp(64px, 14vw, 96px);
+  margin: 0 auto 28px;
+  display: block;
+}
 
-<footer class="site-footer">
-  &copy; 2026 Hapin, Inc. All rights reserved.
-</footer>
+.hero__tagline {
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 16px;
+}
 
-<script>
-  const toggle = document.querySelector('.menu-toggle');
-  const panel = document.getElementById('nav-panel');
-  toggle.addEventListener('click', () => {
-    const isOpen = panel.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded', isOpen);
-    toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && panel.classList.contains('is-open')) {
-      panel.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', false);
-      toggle.setAttribute('aria-label', 'Open menu');
-    }
-  });
-</script>
+.hero__tagline .accent {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
-</body>
-</html>
+.hero__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+.hero__status::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gradient);
+}
+
+.doc {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 8px 24px 96px;
+  width: 100%;
+}
+
+.doc__eyebrow {
+  color: var(--text-muted);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+.doc h1 {
+  font-size: clamp(28px, 5vw, 36px);
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.doc__updated {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin: 0 0 40px;
+}
+
+.accordion {
+  border-top: 1px solid var(--hairline);
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.accordion-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.accordion-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-item summary .plus {
+  font-size: 20px;
+  color: var(--green);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+.accordion-item[open] summary .plus {
+  transform: rotate(45deg);
+}
+
+.accordion-item__body {
+  padding: 0 4px 24px;
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.accordion-item__body p {
+  margin: 0 0 14px;
+}
+
+.accordion-item__body ul {
+  margin: 0 0 14px;
+  padding-left: 20px;
+}
+
+.accordion-item__body li {
+  margin-bottom: 8px;
+}
+
+.draft-notice {
+  background: var(--bg-elevated);
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  padding: 16px 20px;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.draft-notice strong {
+  color: var(--text);
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0 0 40px;
+  padding: 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 4px;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 16px;
+}
+
+.contact-list__icon {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  color: var(--text-muted);
+}
+
+.contact-list a {
+  color: var(--text);
+}
+
+.contact-list address {
+  font-style: normal;
+  color: var(--text);
+}
+
+.site-footer {
+  text-align: center;
+  padding: 24px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
