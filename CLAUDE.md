@@ -5,7 +5,7 @@ Static marketing site for **hapin.co**, served by GitHub Pages straight from the
 ## Structure
 
 ```
-index.html      Home: centered hero (icon, tagline, "Coming soon" status)
+index.html      Home: self-contained marketing page (own inline CSS, fonts and images; does NOT use styles.css)
 privacy.html    Privacy Policy: .doc layout with a <details> accordion
 contact.html    Contact Us: .doc layout with .contact-list (inline SVG icons)
 styles.css      The only stylesheet; shared by every page
@@ -24,7 +24,9 @@ Every page repeats the same shell (there are no includes or templates, so shared
 5. `<footer class="site-footer">`: `&copy; 2026 Hapin, Inc. All rights reserved.`
 6. Inline `<script>` at the end of `<body>` that toggles the nav panel (click + Escape) and keeps `aria-expanded` / `aria-label` in sync.
 
-Title convention: `Page Name — Hapin` (em dash). The home page is `Hapin — Coming Soon`.
+Title convention: `Page Name — Hapin` (em dash). The home page is simply `Hapin`.
+
+**Home page exception:** `index.html` is a standalone design (exported with base64-embedded Fredoka fonts and images, ~2.5MB) with its own `<style>`; it only shares the header/nav/footer markup and menu behavior. Edit it as a whole file replacement from the design source rather than hand-editing. Its menu must stay in sync with the other pages (Home, Privacy Policy, Contact Us).
 
 ### styles.css
 
